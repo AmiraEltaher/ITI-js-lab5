@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Lab5</title>
+</head>
+<body>
+<!-- Q 1 -->
+    <div>
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+        <button id="slideShow">Slide Show</button>
+        <button id="stop">Stop</button>
+    </div>
+    <img src="images/1.jpeg" alt="cat" id="img">
+ <hr>
+ <!-- ============================================================================================== -->
+<!-- Q 2 -->
+ <form action="" id="form">
+    <label for="">Department: </label> 
+    <label for="">SD</label>
+      <input type="radio" name="department">
+      <label for="">OS</label>
+      <input type="radio" name="department">
+      <label for="">EL</label>
+      <input type="radio" name="department"><br>
+      
+      <label for="">StudentName: </label>
+      <input type="text" id="studentName"><br>
+      <span id="nameError"  style="color: red;"></span>
+      <br>
+      <label for="">StudentGrade: </label>
+      <input type="text" id="studentGrade"><br>
+      <span id="gradeError"  style="color: red;"></span>
+      <br>
+     <button  type="button" onclick="addToTable()">Add</button>
+
+
+
+     Sort:  <select name="" id="">
+        <option value="">Name</option>
+        <option value="">Grade</option>
+        </select>
+
+Filter:  <select name="" id="">
+    <option value="">All</option>
+    <option value="">Failed Students</option>
+    <option value="">Success Students</option>
+    </select>
+
+    <!-- table -->
+<br>
+<br>
+<table border="1"> 
+   <thead>
+    <tr>
+      <th>Name</th>
+      <th>Grade</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+ 
+
+
+</form>
+
+ 
+
+    <script src="script.js"></script>
+</body>
+</html>
