@@ -38,21 +38,22 @@
 
 
 
-     Sort:  <select name="" id="">
-        <option value="">Name</option>
-        <option value="">Grade</option>
+     Sort:  <select name="sort" id="sort">
+        <option value="none" disabled selected>Please Select</option>
+        <option value="name">Name</option>
+        <option value="grade">Grade</option>
         </select>
 
-Filter:  <select name="" id="">
-    <option value="">All</option>
-    <option value="">Failed Students</option>
-    <option value="">Success Students</option>
+Filter:  <select name="filter" id="filter" >
+    <option value="all">All</option>
+    <option value="less">Failed Students</option>
+    <option value="greater">Success Students</option>
     </select>
 
     <!-- table -->
 <br>
 <br>
-<table border="1"> 
+<table border="1" id="myTable"> 
    <thead>
     <tr>
       <th>Name</th>

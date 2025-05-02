@@ -48,6 +48,7 @@ function addToTable() {
     let gradeError = document.getElementById("gradeError");
     gradeError.style.display="none";
 
+   
         if (name === ""){
             nameError.innerText = "StudentName should not be empty";
             nameError.style.display="inline";
@@ -56,10 +57,10 @@ function addToTable() {
         name= name.replace(/^./, name[0].toUpperCase())
 
         if (grade ==="" || isNaN(grade) || grade>100 || grade<0){
-            gradeError.innerText="StudentGrade should be between 0:100";
-            gradeError.style.display="inline";
-        
             
+            gradeError.innerText="StudentGrade should be between 0:100";
+            gradeError.style.display="inline"; 
+            grade.style.display="none";      
         }
 
         let tr = document.createElement("tr");
@@ -72,6 +73,9 @@ function addToTable() {
         grade_td.innerText = grade;
         tr.appendChild(grade_td)
 
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText="delete";
+        tr.appendChild(deleteBtn);
 
     table.tBodies[0].appendChild(tr);
 
@@ -79,3 +83,49 @@ function addToTable() {
     document.getElementById("studentGrade").value= "";
 
 }
+
+
+//NOTE: we can use for loop to append elements and in this way we make name for all of them -> getelementbyName advantage : redududancy , disadvantage : time of looping
+// another way to get element by ID in seperate variables , disadvantage memory wast because of variables storage
+
+
+ filter.onchange= () =>{
+    let rows = document.querySelectorAll("#myTable tbody tr");
+    for (row of rows){
+        let grade = row.children[1].innerText;
+        if (filter.value == "greater")
+            row.style.display =grade > 60 ? "":"none";
+        else if (filter.value == "less")
+            row.style.display =grade < 60 ? "":"none";
+        else if (filter.value == "all")
+            row.style.display ="";
+    }
+}
+
+// sort.onchange = () =>{
+//     const sort = document.getElementById('sort');
+//     const myTable = document.getElementById('myTable');
+
+//     let rows = Array.from(document.querySelectorAll("#myTable tbody tr"))
+    
+//     const colIndex ={
+//         name :0,
+//         grade :1,
+//     };
+//     rows.sort( (a,b) =>{
+//         let aValue = a.children[colIndex[sort.value]].innerText;
+//         let bValue = b.children[colIndex[sort.value]].innerText;
+
+//         if (sort.value == "grade"){
+//             aValue = parseFloat(aValue);
+//             bValue = parseFloat(bValue);
+//         }
+
+//         if (aValue < bValue) return -1;
+//         if (aValue > bValue) return 1;
+//         return 0;
+
+//     });
+//     myTable.tBodies[0].innerHTML = "";
+//     rows.forEach( (row) => myTable.tBodies[0].appendChild(row));
+// };
